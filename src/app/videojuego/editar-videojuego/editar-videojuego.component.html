@@ -1,0 +1,33 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Editar Videojuego</h2>
+        </div>
+        <div class="card-body">
+            <form action="">   
+                <div class="form-group" class="form-label">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="v.nombre">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Genero</label>
+                    <input type="text" class="form-control" name="genero" [(ngModel)]="v.genero">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Precio</label>
+                    <input type="text" class="form-control" name="precio" [(ngModel)]="v.precio">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Marca</label>
+                    <select  class="form-select" [(ngModel)]="select" (change)="obtener()" name="select">
+                        <option value="0">Selecciona una Marca</option>
+                        <option [value]="m.id"  *ngFor="let m of marcas;">{{m.nombre}}</option>
+                    </select>
+                  </div>
+                <br>
+                <button class="btn btn-warning" (click)="editar()">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h2>Listar Marcas</h2>
+                </div>
+                <div class="col form-group">
+                    <input type="text" class="form-control"  placeholder="Buscar" [(ngModel)]="search" (keyup)="buscar()">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Genero</th>
+                        <th>Precio</th>
+                        <th>Marca</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let v of videojuego">
+                        <td>{{v.id}}</td>
+                        <td>{{v.nombre}}</td>
+                        <td>{{v.genero}}</td>
+                        <td>{{v.precio}}</td>
+                        <td>{{v.marca.nombre}}</td>
+                        <td><button class="btn btn-warning" (click)="editar(v)">Editar</button></td>
+                        <td><button class="btn btn-danger" (click)="eliminar(v)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col">
+                <p>Hay en total: <b>{{count}}</b> {{count == 1 ? "registro" : "registros"}}</p>
+            </div>
+        </div>
+    </div>
+</div>
